@@ -15,24 +15,29 @@ public class Bus {
 	public boolean getac(){
 		return ac;
 	}
-	public boolean getcapacity(){
+	public int  getcapacity(){
 		return capacity;
 	}
 	
-	public int setac(int cap){ //mutator;
+	public void setac(int cap){ //mutator;
 		capacity=cap;
 	}
-	public int setcapcity(int cap){ //mutator;
-		capacity=cap;
+	public void displayBusInfo()
+	{
+	
+		System.out.println("Bus no :"+ busNo+" Ac:" +ac+" Total capacity: "+capacity);
 	}
 	
 	
+	public void setcapcity(int cap){ //mutator;
+		capacity=cap;
 	}
-
-
 
 
 
 
 
 }
+
+
+

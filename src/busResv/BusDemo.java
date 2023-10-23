@@ -5,22 +5,36 @@ import java.util.ArrayList;
 public class BusDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 		ArrayList<Bus> buses=new ArrayList<Bus>();
+		ArrayList<Booking> bookings=new ArrayList<Booking>();
 		
-		buses.add(new bus(1,true,45));
-		buses.add(new bus(2,false,50));
-		buses.add(new bus(3,true,48));
 		
+		buses.add(new Bus(1,true,2));
+		buses.add(new Bus(2,false,50));
+		buses.add(new Bus(3,true,48));
+		
+//		for (Bus b:buses) {
+//			b.displayBusInfo();
+//		}
 		
 		int userOpt = 1;
 		Scanner sc=new Scanner(System.in);
+		
 		while(userOpt==1) {
 		System.out.println("Enter 1 to Book and 2 to exit");
 		userOpt=sc.nextInt();
 		if(userOpt==1) {
-		System.out.println("Bookin...");
+		Booking booking =new Booking();
+		if(booking.isAvailable(bookings,buses))
+		{
+		   bookings.add(booking);
+		   System.out.println("Your booking is confirmed");
 		}
+		else{
+			System.out.println("sorry ,book another bus....");
+		}
+	}
 		}
 	}
 
